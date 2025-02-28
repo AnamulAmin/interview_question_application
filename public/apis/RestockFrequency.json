@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "label": "Daily",
+    "description": "Items are restocked every day."
+  },
+  {
+    "id": 2,
+    "label": "Weekly",
+    "description": "Items are restocked once a week."
+  },
+  {
+    "id": 3,
+    "label": "Bi-Weekly",
+    "description": "Items are restocked every two weeks."
+  },
+  {
+    "id": 4,
+    "label": "Monthly",
+    "description": "Items are restocked once a month."
+  },
+  {
+    "id": 5,
+    "label": "Quarterly",
+    "description": "Items are restocked once every three months."
+  },
+  {
+    "id": 6,
+    "label": "Bi-Annually",
+    "description": "Items are restocked twice a year."
+  },
+  {
+    "id": 7,
+    "label": "Annually",
+    "description": "Items are restocked once a year."
+  },
+  {
+    "id": 8,
+    "label": "On Demand",
+    "description": "Items are restocked whenever the stock falls below a threshold."
+  },
+  {
+    "id": 9,
+    "label": "Seasonal",
+    "description": "Items are restocked during specific seasons based on demand."
+  },
+  {
+    "id": 10,
+    "label": "Never",
+    "description": "Items are not restocked, typically used for one-time purchases."
+  }
+]

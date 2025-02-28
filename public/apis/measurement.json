@@ -1,0 +1,64 @@
+[
+  {
+    "label": "Weight (Mass)",
+    "units": [
+      "milligram (mg)",
+      "gram (g)",
+      "kilogram (kg)",
+      "metric ton (t)",
+      "ounce (oz)",
+      "pound (lb)",
+      "ton (short ton)"
+    ]
+  },
+  {
+    "label": "Volume",
+    "units": [
+      "milliliter (ml)",
+      "centiliter (cl)",
+      "liter (l)",
+      "teaspoon (tsp)",
+      "tablespoon (tbsp)",
+      "fluid ounce (fl oz)",
+      "cup",
+      "pint (pt)",
+      "quart (qt)",
+      "gallon (gal)"
+    ]
+  },
+  {
+    "label": "Count",
+    "units": ["piece (pc)", "unit", "dozen", "pair"]
+  },
+  {
+    "label": "Length",
+    "units": ["millimeter (mm)", "centimeter (cm)", "meter (m)", "inch (in)"]
+  },
+  {
+    "label": "Area",
+    "units": [
+      "square inch (in²)",
+      "square centimeter (cm²)",
+      "square meter (m²)"
+    ]
+  },
+  {
+    "label": "Nutrition/Serving",
+    "units": ["portion", "serving", "slice"]
+  },
+  {
+    "label": "Miscellaneous",
+    "units": [
+      "pinch",
+      "dash",
+      "drop",
+      "stick",
+      "clove",
+      "handful",
+      "scoop",
+      "bunch",
+      "bushel",
+      "peck"
+    ]
+  }
+]

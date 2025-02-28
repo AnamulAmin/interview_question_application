@@ -1,0 +1,8 @@
+Item ID,Item Name,Category,Quantity,Unit,Restock Frequency,Price per Unit,Supplier
+ID-1,Item-abc123,Vegetables,74.52,kg,Weekly,23.45,Supplier B
+ID-2,Item-def456,Meat,20.15,pcs,Monthly,18.90,Supplier A
+ID-3,Item-ghi789,Fruits,50.35,g,Daily,12.34,Supplier C
+ID-4,Item-jkl012,Beverages,35.00,liters,Weekly,3.99,Supplier A
+ID-5,Item-mno345,Dairy,42.75,packs,Daily,5.67,Supplier B
+...
+

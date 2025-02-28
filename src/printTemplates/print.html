@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Hollo Anamul!
+    <button id="close-btn">Close</button>
+    <script>
+      const closeBtn = document.getElementById("close-btn");
+
+      closeBtn.addEventListener("click", () => {
+        window.ipcRenderer.invoke("close-print");
+      });
+    </script>
+  </body>
+</html>

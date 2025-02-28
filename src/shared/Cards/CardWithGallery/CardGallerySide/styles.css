@@ -1,0 +1,63 @@
+.card_gallery .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.card_gallery .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card_gallery .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card_gallery .swiper {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card_gallery .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.m.card_gallery ySwiper2 {
+  height: 80%;
+  width: 100%;
+}
+
+.m.card_gallery ySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.m.card_gallery ySwiper .card_gallery .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.m.card_gallery ySwiper .card_gallery .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.card_gallery .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

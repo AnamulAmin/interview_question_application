@@ -1,0 +1,107 @@
+[
+  {
+    "customer_name": "John Smith",
+    "email": "john.smith@example.com",
+    "mobile": "1234567890",
+    "address": "123 Main St, New York, NY 10001",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Emma Johnson",
+    "email": "emma.j@example.com",
+    "mobile": "2345678901",
+    "address": "456 Park Ave, Boston, MA 02108",
+    "is_vip": false
+  },
+  {
+    "customer_name": "Michael Brown",
+    "email": "michael.b@example.com",
+    "mobile": "3456789012",
+    "address": "789 Oak Rd, Chicago, IL 60601",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Sarah Wilson",
+    "email": "sarah.w@example.com",
+    "mobile": "4567890123",
+    "address": "321 Pine St, San Francisco, CA 94101",
+    "is_vip": false
+  },
+  {
+    "customer_name": "David Lee",
+    "email": "david.lee@example.com",
+    "mobile": "5678901234",
+    "address": "654 Maple Dr, Seattle, WA 98101",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Lisa Anderson",
+    "email": "lisa.a@example.com",
+    "mobile": "6789012345",
+    "address": "987 Cedar Ln, Miami, FL 33101",
+    "is_vip": false
+  },
+  {
+    "customer_name": "James Taylor",
+    "email": "james.t@example.com",
+    "mobile": "7890123456",
+    "address": "147 Birch St, Austin, TX 78701",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Jennifer Martinez",
+    "email": "jennifer.m@example.com",
+    "mobile": "8901234567",
+    "address": "258 Elm Ave, Denver, CO 80201",
+    "is_vip": false
+  },
+  {
+    "customer_name": "Robert Garcia",
+    "email": "robert.g@example.com",
+    "mobile": "9012345678",
+    "address": "369 Spruce Ct, Portland, OR 97201",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Maria Rodriguez",
+    "email": "maria.r@example.com",
+    "mobile": "0123456789",
+    "address": "741 Willow Way, Phoenix, AZ 85001",
+    "is_vip": false
+  },
+  {
+    "customer_name": "Thomas White",
+    "email": "thomas.w@example.com",
+    "mobile": "1122334455",
+    "address": "852 Aspen Pl, Las Vegas, NV 89101",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Jessica Brown",
+    "email": "jessica.b@example.com",
+    "mobile": "2233445566",
+    "address": "963 Palm St, San Diego, CA 92101",
+    "is_vip": false
+  },
+  {
+    "customer_name": "Daniel Miller",
+    "email": "daniel.m@example.com",
+    "mobile": "3344556677",
+    "address": "159 Beach Rd, Houston, TX 77001",
+    "is_vip": true
+  },
+  {
+    "customer_name": "Michelle Davis",
+    "email": "michelle.d@example.com",
+    "mobile": "4455667788",
+    "address": "357 River Dr, Atlanta, GA 30301",
+    "is_vip": false
+  },
+  {
+    "customer_name": "Christopher Wilson",
+    "email": "chris.w@example.com",
+    "mobile": "5566778899",
+    "address": "246 Lake Ave, Detroit, MI 48201",
+    "is_vip": true
+  }
+]
