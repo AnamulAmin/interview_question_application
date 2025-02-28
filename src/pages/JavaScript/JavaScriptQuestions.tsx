@@ -325,6 +325,59 @@ const JavaScriptQuestions = () => {
       ],
       note: "Use `let` over `var` to avoid accidental re-declarations and scope-related bugs.",
     },
+    {
+      question: "What are lambda expressions or arrow functions?",
+      answer:
+        "An arrow function is a shorter/concise syntax for a function expression. It does not have its own `this`, `arguments`, `super`, or `new.target`. These functions are best suited for non-method functions and cannot be used as constructors.",
+      examples: [
+        {
+          id: "arrowFunc1",
+          title: "Arrow function with multiple parameters",
+          description:
+            "This is an example of an arrow function with two parameters.",
+          code: "const arrowFunc1 = (a, b) => a + b;",
+        },
+        {
+          id: "arrowFunc2",
+          title: "Arrow function with a single parameter",
+          description:
+            "This is an example of an arrow function with a single parameter.",
+          code: "const arrowFunc2 = a => a * 10;",
+        },
+        {
+          id: "arrowFunc3",
+          title: "Arrow function with no parameters",
+          description:
+            "This is an example of an arrow function with no parameters.",
+          code: "const arrowFunc3 = () => {}",
+        },
+      ],
+      note: "Arrow functions cannot be used as constructors and are not suitable for methods that require their own `this` or `arguments`.",
+    },
+    {
+      question:
+        "How do you redeclare variables in a switch block without an error?",
+      answer:
+        "In JavaScript, redeclaring variables in a `switch` block can cause errors because there is only one block scope for the entire `switch` statement. To avoid this error, you can create a nested block within each `case` clause to ensure a new block-scoped lexical environment for each redeclaration.",
+      examples: [
+        {
+          id: "redeclareErrorExample",
+          title:
+            "Redeclaring variables without nested blocks (will cause error)",
+          description:
+            "This example throws a `SyntaxError` due to redeclaring variables in the same scope.",
+          code: "let counter = 1;\nswitch (x) {\n  case 0:\n    let name;\n    break;\n\n  case 1:\n    let name; // SyntaxError for redeclaration.\n    break;\n}",
+        },
+        {
+          id: "redeclareFixedExample",
+          title: "Redeclaring variables with nested blocks (no error)",
+          description:
+            "This example uses nested blocks inside each `case` to avoid the redeclaration error.",
+          code: "let counter = 1;\nswitch (x) {\n  case 0: {\n    let name;\n    break;\n  }\n  case 1: {\n    let name; // No SyntaxError for redeclaration.\n    break;\n  }\n}",
+        },
+      ],
+      note: "To avoid redeclaration errors in `switch` blocks, always use nested blocks inside `case` clauses.",
+    },
   ];
 
   const [selectedLevel, setSelectedLevel] = useState("junior");
