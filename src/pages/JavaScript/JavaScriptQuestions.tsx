@@ -378,7 +378,93 @@ const JavaScriptQuestions = () => {
       ],
       note: "To avoid redeclaration errors in `switch` blocks, always use nested blocks inside `case` clauses.",
     },
+    {
+      question: "What is an IIFE (Immediately Invoked Function Expression)?",
+      answer:
+        "An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined. It is often used to create a new scope, thereby providing data privacy. Any variables declared inside the IIFE cannot be accessed from the outside.",
+      examples: [
+        {
+          id: "iifeExample",
+          title: "Example of IIFE",
+          description:
+            "This is an example of an IIFE that runs immediately after it is defined.",
+          code: "(function () {\n  var message = 'IIFE';\n  console.log(message);\n})();",
+        },
+        {
+          id: "iifeErrorExample",
+          title: "Accessing variables outside an IIFE",
+          description:
+            "Attempting to access variables declared inside an IIFE from the outside will result in an error.",
+          code: "(function () {\n  var message = 'IIFE';\n  console.log(message);\n})();\nconsole.log(message); // Error: message is not defined",
+        },
+      ],
+      note: "IIFEs are useful for creating private variables and encapsulating logic to prevent them from polluting the global scope.",
+    },
+    {
+      question: "How do you decode or encode a URL in JavaScript?",
+      answer:
+        "In JavaScript, `encodeURI()` is used to encode a URL, while `decodeURI()` is used to decode it. These functions help handle special characters in URLs correctly.",
+      examples: [
+        {
+          id: "encodeURIExample",
+          title: "Example of encodeURI",
+          description:
+            "This example shows how to encode a URL using `encodeURI()`.",
+          code: "let uri = 'employeeDetails?name=john&occupation=manager';\nlet encoded_uri = encodeURI(uri);\nconsole.log(encoded_uri);",
+        },
+        {
+          id: "decodeURIExample",
+          title: "Example of decodeURI",
+          description:
+            "This example demonstrates how to decode an encoded URL using `decodeURI()`.",
+          code: "let decoded_uri = decodeURI(encoded_uri);\nconsole.log(decoded_uri);",
+        },
+        {
+          id: "encodeURIComponentExample",
+          title: "Example of encodeURIComponent",
+          description:
+            "If the URL contains special characters such as `/ ? : @ & = + $ #`, use `encodeURIComponent()` to encode them properly.",
+          code: "let specialUri = 'https://example.com/search?query=hello world';\nlet encoded_specialUri = encodeURIComponent(specialUri);\nconsole.log(encoded_specialUri);",
+        },
+      ],
+      note: "Use `encodeURIComponent()` instead of `encodeURI()` if you need to encode special characters like `/ ? : @ & = + $ #`.",
+    },
+    {
+      question: "What is Hoisting?",
+      answer:
+        "Hoisting is a JavaScript mechanism where variable declarations, function declarations, and class declarations are moved to the top of their scope before code execution. However, only the declarations are hoisted, not the initializations.",
+      examples: [
+        {
+          id: "variableHoisting",
+          title: "Example of Variable Hoisting",
+          description:
+            "JavaScript hoists the variable declaration but not its initialization.",
+          code: "console.log(message); // Output: undefined\nvar message = 'The variable has been hoisted';",
+        },
+        {
+          id: "variableHoistingInterpretation",
+          title: "How JavaScript Interprets Hoisting",
+          description:
+            "The JavaScript interpreter moves the variable declaration to the top.",
+          code: "var message;\nconsole.log(message); // Output: undefined\nmessage = 'The variable has been hoisted';",
+        },
+        {
+          id: "functionHoisting",
+          title: "Example of Function Hoisting",
+          description:
+            "Functions can be used before they are declared because they are hoisted.",
+          code: "message('Good morning'); // Output: Good morning\n\nfunction message(name) {\n  console.log(name);\n}",
+        },
+      ],
+      note: "Hoisting allows function declarations to be used before they are defined. However, `let` and `const` variables are hoisted but not initialized, leading to a ReferenceError if accessed before declaration.",
+    },
   ];
+
+  let uri = "employeeDetails? na me=jo hn & occupation = manager";
+  let encoded_uri = encodeURI(uri);
+  let decoded_uri = decodeURI(encoded_uri);
+
+  console.log(decoded_uri, "decoded_uri", encoded_uri, "encoded_uri");
 
   const [selectedLevel, setSelectedLevel] = useState("junior");
 

@@ -73,7 +73,7 @@ const ObjectCreation: React.FC = ({ question, no }: any) => {
             key={method.id}
             // aria-label={method.title}
             title={method.title}
-            className="hover:scale-[1.02] transition-transform duration-200 cursor-pointer"
+            className=" transition-transform duration-200 cursor-pointer"
           >
             <Card>
               <CardBody>
