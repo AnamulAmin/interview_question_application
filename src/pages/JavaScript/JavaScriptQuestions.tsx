@@ -458,6 +458,450 @@ const JavaScriptQuestions = () => {
       ],
       note: "Hoisting allows function declarations to be used before they are defined. However, `let` and `const` variables are hoisted but not initialized, leading to a ReferenceError if accessed before declaration.",
     },
+    {
+      question: "What are classes in ES6?",
+      answer:
+        "In ES6, JavaScript classes provide a cleaner and more structured way to define objects and handle inheritance. They are syntactic sugar over JavaScript’s existing prototype-based inheritance.",
+      comparison: [
+        {
+          feature: "Prototype-based",
+          beforeES6:
+            "Functions were used with prototypes to define object properties and methods.",
+          es6: "Classes provide a more readable and structured syntax for object creation.",
+        },
+        {
+          feature: "Constructor",
+          beforeES6: "Constructors were defined as regular functions.",
+          es6: "Classes use the `constructor` method inside the class.",
+        },
+        {
+          feature: "Methods",
+          beforeES6: "Methods were attached to the prototype manually.",
+          es6: "Methods are defined directly inside the class.",
+        },
+      ],
+      examples: [
+        {
+          id: "prototypeExample",
+          title: "Prototype-based inheritance (Before ES6)",
+          description:
+            "Defining a constructor function and adding methods using prototype.",
+          code: "function Bike(model, color) {\n  this.model = model;\n  this.color = color;\n}\n\nBike.prototype.getDetails = function () {\n  return this.model + ' bike has ' + this.color + ' color';\n};",
+        },
+        {
+          id: "classExample",
+          title: "ES6 Class Syntax",
+          description: "Defining a class with a constructor and methods.",
+          code: "class Bike {\n  constructor(model, color) {\n    this.model = model;\n    this.color = color;\n  }\n\n  getDetails() {\n    return `${this.model} bike has ${this.color} color`;\n  }\n}",
+        },
+      ],
+      note: "Classes in ES6 make object-oriented programming in JavaScript more readable and maintainable.",
+    },
+    {
+      question: "What is scope in JavaScript?",
+      answer:
+        "Scope in JavaScript determines the accessibility of variables, functions, and objects in different parts of the code during runtime. It defines where a variable can be accessed or modified.",
+      comparison: [
+        {
+          feature: "Global Scope",
+          description:
+            "Variables declared outside of any function or block are accessible anywhere in the code.",
+        },
+        {
+          feature: "Function Scope",
+          description:
+            "Variables declared inside a function are only accessible within that function.",
+        },
+        {
+          feature: "Block Scope",
+          description:
+            "Variables declared with `let` or `const` inside a block (`{}`) are only accessible within that block.",
+        },
+        {
+          feature: "Lexical Scope",
+          description:
+            "Inner functions can access variables from their outer functions due to lexical scoping.",
+        },
+      ],
+      examples: [
+        {
+          id: "globalScopeExample",
+          title: "Example of Global Scope",
+          description:
+            "A variable declared outside a function can be accessed anywhere in the script.",
+          code: "let globalVar = 'I am global';\nfunction showGlobalVar() {\n  console.log(globalVar); // Accessible\n}\nshowGlobalVar();",
+        },
+        {
+          id: "functionScopeExample",
+          title: "Example of Function Scope",
+          description:
+            "A variable declared inside a function cannot be accessed outside of it.",
+          code: "function myFunction() {\n  let localVar = 'I am local';\n  console.log(localVar); // Accessible inside function\n}\nmyFunction();\nconsole.log(localVar); // Error: localVar is not defined",
+        },
+        {
+          id: "blockScopeExample",
+          title: "Example of Block Scope",
+          description:
+            "Variables declared with `let` or `const` inside a block are only accessible within that block.",
+          code: "{\n  let blockScoped = 'Inside block';\n  console.log(blockScoped); // Accessible inside block\n}\nconsole.log(blockScoped); // Error: blockScoped is not defined",
+        },
+        {
+          id: "lexicalScopeExample",
+          title: "Example of Lexical Scope",
+          description:
+            "Inner functions can access variables from their outer functions.",
+          code: "function outer() {\n  let outerVar = 'I am outer';\n  function inner() {\n    console.log(outerVar); // Accessible due to lexical scope\n  }\n  inner();\n}\nouter();",
+        },
+      ],
+      note: "Understanding scope helps prevent variable conflicts and ensures better memory management in JavaScript.",
+    },
+    {
+      question: "What is a Cookie?",
+      answer:
+        "A cookie is a small piece of data stored in the user's browser by a website. It helps websites remember user information, such as login credentials, preferences, and session data.",
+      comparison: [
+        {
+          feature: "Session Cookies",
+          description:
+            "These cookies are temporary and are deleted when the browser is closed.",
+        },
+        {
+          feature: "Persistent Cookies",
+          description:
+            "These cookies remain stored in the browser until they expire or are manually deleted.",
+        },
+        {
+          feature: "Third-Party Cookies",
+          description:
+            "These cookies are set by domains other than the website the user is visiting, often used for tracking and advertising.",
+        },
+      ],
+      examples: [
+        {
+          id: "setCookieExample",
+          title: "Example of Setting a Cookie",
+          description:
+            "This example sets a cookie with a name, value, and expiration date.",
+          code: "document.cookie = 'username=JohnDoe; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';",
+        },
+        {
+          id: "getCookieExample",
+          title: "Example of Getting a Cookie",
+          description:
+            "This function retrieves a specific cookie value by name.",
+          code: "function getCookie(name) {\n  let cookies = document.cookie.split('; ');\n  for (let cookie of cookies) {\n    let [key, value] = cookie.split('=');\n    if (key === name) return value;\n  }\n  return null;\n}\nconsole.log(getCookie('username')); // Output: JohnDoe",
+        },
+        {
+          id: "deleteCookieExample",
+          title: "Example of Deleting a Cookie",
+          description:
+            "This example removes a cookie by setting its expiration date to the past.",
+          code: "document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';",
+        },
+      ],
+      note: "Cookies are commonly used for authentication, tracking user behavior, and storing preferences. However, they have size limitations and can be disabled by users.",
+    },
+    {
+      question: "Why do you need a Cookie?",
+      answer:
+        "Cookies are used to store user-specific data in the browser, allowing websites to remember user preferences, login sessions, and other personalized information. This improves the user experience by maintaining state across visits.",
+      comparison: [
+        {
+          feature: "User Authentication",
+          description:
+            "Cookies store login sessions, so users don’t have to log in every time they visit a website.",
+        },
+        {
+          feature: "User Preferences",
+          description:
+            "Websites remember theme selection, language preferences, and other settings.",
+        },
+        {
+          feature: "Shopping Carts",
+          description:
+            "E-commerce sites use cookies to keep track of items added to a shopping cart.",
+        },
+        {
+          feature: "Analytics & Tracking",
+          description:
+            "Cookies help track user behavior, such as pages visited and time spent on a site, for analytics and advertising purposes.",
+        },
+      ],
+      examples: [
+        {
+          id: "rememberUserExample",
+          title: "Example of Remembering a User",
+          description:
+            "This example stores a username in a cookie and retrieves it when the user revisits the site.",
+          code: "document.cookie = 'username=JohnDoe; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';\n\nfunction getCookie(name) {\n  let cookies = document.cookie.split('; ');\n  for (let cookie of cookies) {\n    let [key, value] = cookie.split('=');\n    if (key === name) return value;\n  }\n  return null;\n}\nconsole.log('Welcome back, ' + getCookie('username'));",
+        },
+      ],
+      note: "Cookies enhance the user experience but should be used responsibly, as they can also be used for tracking and targeted advertising.",
+    },
+
+    {
+      question: "What are the options in a cookie?",
+      answer:
+        "Cookies have various options that control their behavior, such as expiration, scope, and security. These options allow developers to specify how and where a cookie should be stored and accessed.",
+      comparison: [
+        {
+          feature: "Expires",
+          description:
+            "Defines when the cookie should expire. If not set, the cookie will be deleted when the browser is closed.",
+        },
+        {
+          feature: "Max-Age",
+          description:
+            "Sets the lifespan of the cookie in seconds, after which it will be deleted.",
+        },
+        {
+          feature: "Path",
+          description:
+            "Specifies the URL path that must be matched to send the cookie.",
+        },
+        {
+          feature: "Domain",
+          description:
+            "Defines the domain for which the cookie is valid. It can be set to a higher-level domain to allow subdomains to access it.",
+        },
+        {
+          feature: "Secure",
+          description:
+            "Ensures the cookie is only sent over HTTPS connections.",
+        },
+        {
+          feature: "HttpOnly",
+          description:
+            "Prevents JavaScript from accessing the cookie, making it more secure against cross-site scripting (XSS) attacks.",
+        },
+        {
+          feature: "SameSite",
+          description:
+            "Controls whether the cookie is sent with cross-site requests, helping to prevent CSRF attacks. Options include 'Strict', 'Lax', and 'None'.",
+        },
+      ],
+      examples: [
+        {
+          id: "expiresExample",
+          title: "Setting a cookie with an expiration date",
+          description:
+            "This example sets a cookie that expires on a specific date.",
+          code: "document.cookie = 'username=John; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';",
+        },
+        {
+          id: "secureExample",
+          title: "Setting a secure cookie",
+          description:
+            "This example sets a cookie that is only transmitted over HTTPS.",
+          code: "document.cookie = 'sessionId=abc123; secure';",
+        },
+        {
+          id: "sameSiteExample",
+          title: "Setting a SameSite cookie",
+          description:
+            "This example sets a cookie with a 'Strict' SameSite policy to prevent cross-site requests.",
+          code: "document.cookie = 'user=JohnDoe; SameSite=Strict';",
+        },
+      ],
+      note: "Using secure options like HttpOnly, Secure, and SameSite can help improve security and prevent vulnerabilities like XSS and CSRF.",
+    },
+    {
+      question: "How do you delete a cookie?",
+      answer:
+        "You can delete a cookie by setting the expiry date to a past date. You don't need to specify a cookie value in this case.",
+      comparison: [
+        {
+          feature: "Expiration Date",
+          description:
+            "Setting an expiration date in the past ensures the browser removes the cookie immediately.",
+        },
+        {
+          feature: "Path Parameter",
+          description:
+            "Defining the path ensures the correct cookie is deleted, as some browsers require it.",
+        },
+      ],
+      examples: [
+        {
+          id: "deleteCookieExample",
+          title: "Example of Deleting a Cookie",
+          description:
+            "This example removes a 'username' cookie by setting its expiration date to a past date.",
+          code: "document.cookie = 'username=; expires=Fri, 07 Jun 2019 00:00:00 UTC; path=/';",
+        },
+      ],
+      note: "You should define the cookie path option to ensure you delete the correct cookie. Some browsers do not allow deletion unless a path parameter is specified.",
+    },
+    {
+      question:
+        "What are the differences between cookies, local storage, and session storage?",
+      answer:
+        "Cookies, local storage, and session storage are all used for storing data in a browser, but they differ in terms of access, expiration, security, and storage capacity.",
+      comparison: [
+        {
+          feature: "Accessed on Client or Server Side",
+          description:
+            "Cookies can be accessed on both the server-side (via HTTP headers) and the client-side (via JavaScript), whereas local storage and session storage are accessible only on the client-side.",
+        },
+        {
+          feature: "Expiry",
+          description:
+            "Cookies expire based on the 'Expires' or 'Max-Age' attributes. Local storage persists indefinitely until manually deleted. Session storage lasts only until the browser tab is closed.",
+        },
+        {
+          feature: "SSL Support",
+          description:
+            "Cookies support secure transmission over HTTPS using the Secure flag. Local storage and session storage do not provide built-in SSL support.",
+        },
+        {
+          feature: "Maximum Data Size",
+          description:
+            "Cookies have a storage limit of 4KB, while local storage and session storage can store up to 5MB each.",
+        },
+        {
+          feature: "Accessible From",
+          description:
+            "Cookies and local storage can be accessed from any window of the same origin, while session storage is restricted to the tab where it was created.",
+        },
+        {
+          feature: "Sent with Requests",
+          description:
+            "Cookies are automatically sent with every HTTP request to the server, while local storage and session storage are not included in requests.",
+        },
+      ],
+      examples: [
+        {
+          id: "cookieExample",
+          title: "Setting a Cookie",
+          description:
+            "This example sets a cookie that expires on a specific date.",
+          code: "document.cookie = 'username=John; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';",
+        },
+        {
+          id: "localStorageExample",
+          title: "Using Local Storage",
+          description:
+            "This example stores a value in local storage and retrieves it.",
+          code: "localStorage.setItem('username', 'JohnDoe');\nconsole.log(localStorage.getItem('username')); // Output: JohnDoe",
+        },
+        {
+          id: "sessionStorageExample",
+          title: "Using Session Storage",
+          description:
+            "This example stores a value in session storage and retrieves it.",
+          code: "sessionStorage.setItem('sessionID', 'abc123');\nconsole.log(sessionStorage.getItem('sessionID')); // Output: abc123",
+        },
+      ],
+      note: "Cookies are best for storing small, server-needed data such as authentication tokens, while local storage is useful for persistent client-side data. Session storage is ideal for temporary session-based data.",
+    },
+    {
+      question:
+        "What are the differences between cookies, local storage, and session storage?",
+      answer:
+        "Cookies, local storage, and session storage are all used for storing data in a browser, but they differ in terms of access, expiration, security, and storage capacity.",
+      comparison: [
+        {
+          feature: "Accessed on Client or Server Side",
+          cookie:
+            "Both server-side & client-side. The 'Set-Cookie' HTTP response header is used by the server to send cookies to the client.",
+          localStorage: "Client-side only.",
+          sessionStorage: "Client-side only.",
+        },
+        {
+          feature: "Expiry",
+          cookie:
+            "Manually configured using the 'Expires' or 'Max-Age' attributes.",
+          localStorage: "Persists indefinitely until manually deleted.",
+          sessionStorage: "Expires when the browser tab is closed.",
+        },
+        {
+          feature: "SSL Support",
+          cookie: "Supported with the Secure flag.",
+          localStorage: "Not supported.",
+          sessionStorage: "Not supported.",
+        },
+        {
+          feature: "Maximum Data Size",
+          cookie: "4KB.",
+          localStorage: "5MB.",
+          sessionStorage: "5MB.",
+        },
+        {
+          feature: "Accessible From",
+          cookie: "Any window of the same origin.",
+          localStorage: "Any window of the same origin.",
+          sessionStorage: "Same tab only.",
+        },
+        {
+          feature: "Sent with Requests",
+          cookie: "Yes, automatically sent with every HTTP request.",
+          localStorage: "No.",
+          sessionStorage: "No.",
+        },
+      ],
+      examples: [
+        {
+          id: "cookieExample",
+          title: "Setting a Cookie",
+          description:
+            "This example sets a cookie that expires on a specific date.",
+          code: "document.cookie = 'username=John; expires=Fri, 31 Dec 2025 23:59:59 GMT; path=/';",
+        },
+        {
+          id: "localStorageExample",
+          title: "Using Local Storage",
+          description:
+            "This example stores a value in local storage and retrieves it.",
+          code: "localStorage.setItem('username', 'JohnDoe');\nconsole.log(localStorage.getItem('username')); // Output: JohnDoe",
+        },
+        {
+          id: "sessionStorageExample",
+          title: "Using Session Storage",
+          description:
+            "This example stores a value in session storage and retrieves it.",
+          code: "sessionStorage.setItem('sessionID', 'abc123');\nconsole.log(sessionStorage.getItem('sessionID')); // Output: abc123",
+        },
+      ],
+      note: "Cookies are best for storing small, server-needed data such as authentication tokens, while local storage is useful for persistent client-side data. Session storage is ideal for temporary session-based data.",
+    },
+    {
+      question:
+        "What is the main difference between localStorage and sessionStorage?",
+      answer:
+        "LocalStorage and SessionStorage are both web storage mechanisms that store data in the browser, but they differ in persistence.",
+      comparison: [
+        {
+          feature: "Persistence",
+          localStorage:
+            "Data persists even when the browser is closed and reopened. It has no expiration time.",
+          sessionStorage:
+            "Data is cleared when the page session ends (i.e., when the browser tab is closed).",
+        },
+        {
+          feature: "Scope",
+          localStorage: "Accessible from any tab or window of the same origin.",
+          sessionStorage:
+            "Accessible only within the same tab in which it was set.",
+        },
+      ],
+      examples: [
+        {
+          id: "localStorageExample",
+          title: "Using Local Storage",
+          description:
+            "This example stores a username in localStorage and retrieves it.",
+          code: "localStorage.setItem('username', 'JohnDoe');\nconsole.log(localStorage.getItem('username')); // Output: JohnDoe",
+        },
+        {
+          id: "sessionStorageExample",
+          title: "Using Session Storage",
+          description:
+            "This example stores a session ID in sessionStorage and retrieves it.",
+          code: "sessionStorage.setItem('sessionID', 'abc123');\nconsole.log(sessionStorage.getItem('sessionID')); // Output: abc123",
+        },
+      ],
+      note: "Use localStorage for long-term data storage and sessionStorage for temporary session-based data.",
+    },
   ];
 
   let uri = "employeeDetails? na me=jo hn & occupation = manager";
