@@ -902,6 +902,42 @@ const JavaScriptQuestions = () => {
       ],
       note: "Use localStorage for long-term data storage and sessionStorage for temporary session-based data.",
     },
+    {
+      question: "How do you access web storage?",
+      answer:
+        "The Window object implements the WindowLocalStorage and WindowSessionStorage objects, which provide access to localStorage (window.localStorage) and sessionStorage (window.sessionStorage). These properties create an instance of the Storage object, through which data can be set, retrieved, and removed for a specific domain and storage type (session or local).",
+      examples: [
+        {
+          id: "setLocalStorageExample",
+          title: "Setting an item in localStorage",
+          description:
+            "This example stores a value in localStorage using the setItem method.",
+          code: "localStorage.setItem('logo', document.getElementById('logo').value);",
+        },
+        {
+          id: "getLocalStorageExample",
+          title: "Retrieving an item from localStorage",
+          description:
+            "This example retrieves a stored value from localStorage using the getItem method.",
+          code: "console.log(localStorage.getItem('logo'));",
+        },
+        {
+          id: "setSessionStorageExample",
+          title: "Setting an item in sessionStorage",
+          description:
+            "This example stores a session value using sessionStorage.",
+          code: "sessionStorage.setItem('sessionID', 'xyz123');",
+        },
+        {
+          id: "getSessionStorageExample",
+          title: "Retrieving an item from sessionStorage",
+          description:
+            "This example retrieves a session value using sessionStorage.",
+          code: "console.log(sessionStorage.getItem('sessionID'));",
+        },
+      ],
+      note: "Use localStorage for persistent data that remains even after closing the browser, and sessionStorage for temporary data that is cleared when the session ends.",
+    },
   ];
 
   let uri = "employeeDetails? na me=jo hn & occupation = manager";
